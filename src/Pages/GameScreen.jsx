@@ -41,7 +41,6 @@ export default function GameScreen({ rows, cols, onRestart }) {
             <h2>
                 {winner ? `🏆 המנצח: ${winner}` : `תור: ${currentPlayer}`}
             </h2>
-
             <Board
                 board={board}
                 rows={rows}

@@ -1,3 +1,4 @@
+/* ====== GLOBAL ====== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -10,11 +11,13 @@ body {
     padding: 20px;
 }
 
+/* ====== BOARD ====== */
 .board {
     display: inline-block;
     margin-top: 20px;
 }
 
+/* ====== DROP BUTTONS ====== */
 .drop-row {
     display: grid;
     gap: 8px;
@@ -29,10 +32,16 @@ body {
     border-radius: 8px;
     border: none;
     background: #ddd;
+    transition: background 0.2s;
 }
 
+.drop-btn:hover {
+    background: #ccc;
+}
+
+/* ====== GRID ====== */
 .grid {
-    background: #0057b8;
+    background: #0057b8;          /* צבע הלוח */
     padding: 10px;
     border-radius: 12px;
     display: grid;
@@ -40,30 +49,34 @@ body {
     direction: rtl;
 }
 
+/* ====== CELLS (HOLES) ====== */
 .cell {
     width: 60px;
     height: 60px;
-    background: #003f87;
+    background: #f0f2f5;          /* חור – צבע רקע */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* ====== TOKENS ====== */
 .token {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.4);
 }
 
 .token.red {
-    background: red;
+    background: crimson;
 }
 
 .token.yellow {
-    background: yellow;
+    background: gold;
 }
 
+/* ====== GENERAL BUTTONS ====== */
 button {
     margin: 10px;
     padding: 10px 20px;

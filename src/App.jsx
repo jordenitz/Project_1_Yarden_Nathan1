@@ -1,8 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
 import StartScreen from "./Pages/StartScreen";
 import GameScreen from "./Pages/GameScreen";
+import "./App.css";
 
-export default function App() {
+function App() {
     const [started, setStarted] = useState(false);
     const [rows, setRows] = useState(6);
     const [cols, setCols] = useState(7);
@@ -23,3 +25,13 @@ export default function App() {
         <StartScreen onStart={startGame} />
     );
 }
+
+// ⬇️ ה־index נכנס לכאן
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
+);
+
+export default App;
