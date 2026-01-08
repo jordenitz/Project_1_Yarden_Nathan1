@@ -8,10 +8,12 @@ function App() {
     const [started, setStarted] = useState(false);
     const [rows, setRows] = useState(6);
     const [cols, setCols] = useState(7);
+    const [vsComputer, setVsComputer] = useState(false);
 
-    const startGame = (r, c) => {
+    const startGame = (r, c, vsComp) => {
         setRows(r);
         setCols(c);
+        setVsComputer(vsComp);
         setStarted(true);
     };
 
@@ -19,6 +21,7 @@ function App() {
         <GameScreen
             rows={rows}
             cols={cols}
+            vsComputer={vsComputer}
             onRestart={() => setStarted(false)}
         />
     ) : (
@@ -26,7 +29,7 @@ function App() {
     );
 }
 
-// ⬇️ ה־index נכנס לכאן
+// ⬇️ index
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
     <React.StrictMode>

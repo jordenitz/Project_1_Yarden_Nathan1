@@ -3,6 +3,7 @@ import { useState } from "react";
 export default function StartScreen({ onStart }) {
     const [rows, setRows] = useState(6);
     const [cols, setCols] = useState(7);
+    const [vsComputer, setVsComputer] = useState(false);
 
     return (
         <div className="screen" dir="rtl">
@@ -34,7 +35,18 @@ export default function StartScreen({ onStart }) {
 
             <br /><br />
 
-            <button onClick={() => onStart(rows, cols)}>
+            <label>
+                <input
+                    type="checkbox"
+                    checked={vsComputer}
+                    onChange={(e) => setVsComputer(e.target.checked)}
+                />
+                שחק נגד המחשב 🤖
+            </label>
+
+            <br /><br />
+
+            <button onClick={() => onStart(rows, cols, vsComputer)}>
                 התחל משחק
             </button>
         </div>

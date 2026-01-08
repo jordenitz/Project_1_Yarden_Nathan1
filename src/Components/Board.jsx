@@ -25,8 +25,8 @@ export default function Board({ board, rows, cols, onColumnClick }) {
             >
                 {board.map((row, r) =>
                     row.map((cell, c) => (
-                        <div key={`${r}-${c}`} className="cell">
-                            {cell && (
+                        <div key={`cell-${r}-${c}`} className="cell">
+                        {cell && (
                                 <div
                                     className={`token ${
                                         cell === "🔴" ? "red" : "yellow"
